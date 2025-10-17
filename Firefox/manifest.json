@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Login with MSAUTH",
+  "version": "1.0",
+  "description": "...",
+  "permissions": [
+    "cookies",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://login.live.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://login.live.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "login-with-msauth@strikeontop.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
