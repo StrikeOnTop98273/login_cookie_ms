@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Login with MSAUTH",
+  "version": "1.0",
+  "description": "...",
+  "permissions": [
+    "cookies",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://login.live.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://login.live.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
